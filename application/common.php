@@ -84,3 +84,27 @@ function get_client_ip($type = 0,$adv=false) {
     $ip   = $long ? array($ip, $long) : array('0.0.0.0', 0);
     return $ip[$type];
 }
+/**
+ * 格式化字节大小
+ * @param  number $size      字节数
+ * @param  string $delimiter 数字和单位分隔符
+ * @return string            格式化后的带单位的大小
+ */
+function format_bytes($size, $delimiter = '') {
+    $units = array('B', 'KB', 'MB', 'GB', 'TB', 'PB');
+    for ($i = 0; $size >= 1024 && $i < 5; $i++)
+        $size /= 1024;
+    return round($size, 2) . $delimiter . $units[$i];
+}
+
+// 判断是否是json格式的数据
+function is_json($json_str) {
+    $json_str = str_replace('\\', '', $json_str);
+    $out_arr = array();
+    preg_match('/{.*}/', $json_str, $out_arr);
+    if (!empty($out_arr)) {
+        return true;
+    } else {
+        return FALSE;
+    }
+}
