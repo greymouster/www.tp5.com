@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>账号信息</title>
+    <link rel="stylesheet" href="{$Think.config.PUBLIC_URL}/css/style.css">
+    <script src="{$Think.config.PUBLIC_URL}/js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+    <div class="home-top">
+        <h2>活动管理平台</h2>
+        <p>欢迎翟阳（超级管理员）</p>
+        <div class="account">
+            我的账号
+            <ul>
+                <li><a href="account-info.html">查看账号</a> </li>
+                <li><a href="login.html">退出账号</a> </li>
+            </ul>
+        </div>
+    </div>
+    <div class="home-left">
+        <ul>
+            <li><h3>活动公告</h3></li>
+            <li><a href="new-info.html">最新公告</a> </li>
+            <li><h3>活动推广</h3></li>
+            <li><a href="publish-act.html">发布新活动</a> </li>
+            <li><a href="info-manage.html">活动信息管理</a> </li>
+            <li><a href="activity-me.html">我推广的活动</a> </li>
+            <li><a href="code-me.html">我的二维码</a> </li>
+            <li><h3>活动上线</h3></li>
+            <li><a href="act-online.html">活动上线审核</a> </li>
+            <li><a href="total-data.html">活动数据统计</a> </li>
+            <li><h3>报名管理</h3></li>
+            <li><a href="join-sh.html">报名审核</a> </li>
+            <li><h3>系统管理</h3></li>
+            <li><a href="limit-mana.html">权限管理</a> </li>
+            <li><a href="act-sort.html">活动分类管理</a> </li>
+            <li><a href="act-place.html">活动地点管理</a> </li>
+            <li><a href="promote-place.html">推广渠道管理</a> </li>
+            <li><a href="log.html">操作日志</a> </li>
+            <li><h3>广告位</h3></li>
+            <li><a href="add-Ad.html">新增广告位</a> </li>
+            <li><a href="ad-manage.html">广告位管理</a> </li>
+        </ul>
+    </div>
+    <div class="account-info">
+        <h3>账号信息</h3>
+        <form>
+            <dl>
+                <dt>用户名</dt>
+                <dd>young.zhai</dd>
+            </dl>
+            <dl>
+                <dt>姓名</dt>
+                <dd>翟阳</dd>
+            </dl>
+            <dl>
+                <dt>邮箱</dt>
+                <dd>young.zhai@tiandaoedu.com</dd>
+            </dl>
+            <dl>
+                <dt>部门</dt>
+                <dd>北京分公司\互联网教育事业部\产品部\产品组</dd>
+            </dl>
+            <dl>
+                <dt>所属组</dt>
+                <dd>未分组</dd>
+            </dl>
+        </form>
+    </div>
+</body>
+<script>
+    $(function(){
+        $('.account').click(function(event){
+            $(this).children('ul').css('display','block');
+            event.stopPropagation();
+        })
+        $(document).click(function(){
+            $('.account ul').css('display','none');
+        })
+    })
+</script>
+</html>

@@ -228,4 +228,17 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+    
+    //本站项目
+    'PUBLIC_URL' => '/static/admin',
+    //插件目录
+    'PLUG_URL' => '/plug',
+    /********************RTX接口配置**************/
+    'RTX_URL' =>'http://pm.tdedu.org/api/',
+    //接口校验
+    'APPID'=>'849492',
+    'APPSECRET'=>"69a23FG42H3D42f34",	
+    //可逆加密KEY
+    'AUTH_KEY' => 'K5HJ89Yd345K',
+    
 ];
