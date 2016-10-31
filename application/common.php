@@ -97,6 +97,8 @@ function format_bytes($size, $delimiter = '') {
     return round($size, 2) . $delimiter . $units[$i];
 }
 
+
+
 // 判断是否是json格式的数据
 function is_json($json_str) {
     $json_str = str_replace('\\', '', $json_str);
@@ -107,4 +109,21 @@ function is_json($json_str) {
     } else {
         return FALSE;
     }
+}
+
+/**
+ * 多维数组转化为一维数组
+ * @param 多维数组
+ * @return array 一维数组
+ */
+function array_multi2single($array)
+{
+    static $result_array = array();
+    foreach ($array as $value) {
+        if (is_array($value)) {
+            array_multi2single($value);
+        } else
+            $result_array [] = $value;
+    }
+    return $result_array;
 }
